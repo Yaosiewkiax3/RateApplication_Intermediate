@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.View
 import android.widget.*
 import kotlinx.android.synthetic.main.activity_add_movie.*
+import android.content.Intent
 
 class AddMovie : AppCompatActivity() {
 
@@ -59,6 +60,9 @@ class AddMovie : AppCompatActivity() {
             }
             val toast = Toast.makeText(applicationContext, toastText, duration)
             toast.show()
+            val intent = Intent(this, AddMovie::class.java)
+            intent.putExtra("movieName",movieName)
+            startActivity(intent)
             }
 
 

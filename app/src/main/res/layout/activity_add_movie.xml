@@ -66,9 +66,8 @@
     <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="textPersonName"
             android:ems="10"
-            android:id="@+id/ptReleaseDate" android:hint="Release date"/>
+            android:id="@+id/ptReleaseDate" android:hint="Release date" android:inputType="date"/>
     <CheckBox
             android:text="Not suitable for all audience"
             android:layout_width="match_parent"

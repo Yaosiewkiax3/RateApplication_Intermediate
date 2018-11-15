@@ -5,7 +5,7 @@
 
     <ImageView
             android:layout_width="match_parent"
-            android:layout_height="81dp" app:srcCompat="@drawable/mobile" android:id="@+id/imageView"/>
+            android:layout_height="89dp" app:srcCompat="@drawable/mobile" android:id="@+id/imageView"/>
     <TextView
             android:text="Title:"
             android:layout_width="match_parent"

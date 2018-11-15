@@ -13,7 +13,7 @@
     <TextView
             android:text="Venom"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" android:id="@+id/textView6" android:textSize="24sp"/>
+            android:layout_height="wrap_content" android:id="@+id/tvTitle" android:textSize="24sp"/>
     <TextView
             android:text="Overview:"
             android:layout_width="match_parent"
@@ -21,7 +21,7 @@
     <TextView
             android:text="When Eddie Brock acquires the power of venom..."
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" android:id="@+id/textView10" android:textSize="22sp"/>
+            android:layout_height="wrap_content" android:id="@+id/tvDesc" android:textSize="22sp"/>
     <TextView
             android:text="Language:"
             android:layout_width="match_parent"
@@ -29,7 +29,7 @@
     <TextView
             android:text="English"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" android:id="@+id/textView13" android:textSize="22sp"/>
+            android:layout_height="wrap_content" android:id="@+id/tvLanguage" android:textSize="22sp"/>
     <TextView
             android:text="Release date:"
             android:layout_width="match_parent"
@@ -37,7 +37,7 @@
     <TextView
             android:text="03-10-2018"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" android:id="@+id/textView11" android:textSize="22sp"/>
+            android:layout_height="wrap_content" android:id="@+id/tvDate" android:textSize="22sp"/>
     <TextView
             android:text="Suitable for ages below 13"
             android:layout_width="match_parent"
@@ -45,5 +45,22 @@
     <TextView
             android:text="Yes"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" android:id="@+id/textView16" android:textSize="22sp"/>
+            android:layout_height="wrap_content" android:id="@+id/tvSuitable" android:textSize="22sp"/>
+    <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" android:id="@+id/LLReaons" android:visibility="invisible">
+        <TextView
+                android:text="Reasons:"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:id="@+id/textView3"/>
+        <TextView
+                android:text="Violence"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:id="@+id/tvViolence" android:textSize="22sp"/>
+        <TextView
+                android:text="Adult language"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:id="@+id/tvAdultLanguage" android:textSize="22sp"/>
+    </LinearLayout>
 </LinearLayout>

@@ -13,7 +13,6 @@
     <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="textMultiLine"
             android:ems="10"
-            android:id="@+id/editText" android:hint="Share your view on the show"/>
+            android:id="@+id/editText" android:hint="Share your view on the show" android:inputType="textMultiLine"/>
 </LinearLayout>

@@ -23,6 +23,14 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content" android:id="@+id/tvDesc" android:textSize="22sp"/>
     <TextView
+            android:text="Reviews:"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:id="@+id/textView6"/>
+    <TextView
+            android:text="No Reviews yet \nLong press here to add your review"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:id="@+id/tvLanguage2" android:textSize="22sp"/>
+    <TextView
             android:text="Language:"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" android:id="@+id/textView12"/>

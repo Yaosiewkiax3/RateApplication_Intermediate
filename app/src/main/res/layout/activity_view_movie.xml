@@ -29,7 +29,7 @@
     <TextView
             android:text="No Reviews yet \nLong press here to add your review"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" android:id="@+id/tvLanguage2" android:textSize="22sp"/>
+            android:layout_height="wrap_content" android:id="@+id/tvAddReview" android:textSize="22sp"/>
     <TextView
             android:text="Language:"
             android:layout_width="match_parent"

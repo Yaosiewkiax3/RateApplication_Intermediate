@@ -6,6 +6,9 @@ import android.view.View
 import android.widget.*
 import kotlinx.android.synthetic.main.activity_add_movie.*
 import android.content.Intent
+import android.view.ContextMenu
+import android.view.MenuItem
+import kotlinx.android.synthetic.main.activity_view_movie.*
 
 class AddMovie : AppCompatActivity() {
 

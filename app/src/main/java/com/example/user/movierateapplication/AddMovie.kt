@@ -6,9 +6,8 @@ import android.view.View
 import android.widget.*
 import kotlinx.android.synthetic.main.activity_add_movie.*
 import android.content.Intent
-import android.view.ContextMenu
+import android.view.Menu
 import android.view.MenuItem
-import kotlinx.android.synthetic.main.activity_view_movie.*
 
 class AddMovie : AppCompatActivity() {
 
@@ -18,63 +17,64 @@ class AddMovie : AppCompatActivity() {
 
 
 
-        cbAudience.setOnCheckedChangeListener{checkbox,isChecked->
-            if(isChecked){
+        cbAudience.setOnCheckedChangeListener { checkbox, isChecked ->
+            if (isChecked) {
                 cbReasons.visibility = View.VISIBLE
-            }
-            else{
+            } else {
                 cbReasons.visibility = View.INVISIBLE
             }
         }
 
         val button = findViewById<Button>(R.id.button2)
-        button.setOnClickListener{
+        button.setOnClickListener {
             val ptMovieName = findViewById<TextView>(R.id.ptMovieName)
-            val movieName :String? = ptMovieName.text.toString()
+            val movieName: String? = ptMovieName.text.toString()
             val ptDesc = findViewById<TextView>(R.id.ptDesc)
-            val desc :String? = ptDesc.text.toString()
+            val desc: String? = ptDesc.text.toString()
             val ptRelease = findViewById<TextView>(R.id.ptReleaseDate)
-            val releaseDate :String? = ptRelease.text.toString()
+            val releaseDate: String? = ptRelease.text.toString()
             val radioLangGroup = findViewById<RadioGroup>(R.id.rgLang)
             val idSelected = radioLangGroup.checkedRadioButtonId
             val radioLangText = findViewById<RadioButton>(idSelected).text
 
-            if(movieName.isNullOrBlank()){
+            if (movieName.isNullOrBlank()) {
                 ptMovieName.setError("Field empty")
             }
-            if(desc.isNullOrBlank()){
+            if (desc.isNullOrBlank()) {
                 ptDesc.setError("Field empty")
             }
-            if(releaseDate.isNullOrBlank()){
+            if (releaseDate.isNullOrBlank()) {
                 ptRelease.setError("Field empty")
             }
             val duration = Toast.LENGTH_SHORT
 
             val suitable4Aud = cbAudience.isChecked.toString()
-            var toastText = "Title = $movieName \n Overview = $desc \n Release date = $releaseDate \n Language = $radioLangText \n Not suitable for all ages = $suitable4Aud"
-            if(cbAudience.isChecked){
+            var toastText =
+                "Title = $movieName \n Overview = $desc \n Release date = $releaseDate \n Language = $radioLangText \n Not suitable for all ages = $suitable4Aud"
+            if (cbAudience.isChecked) {
                 toastText += "\n Reasons:"
-                if(cbViolence.isChecked){
+                if (cbViolence.isChecked) {
                     toastText += "\n Violence"
                 }
-                if(cbLanguage.isChecked){
+                if (cbLanguage.isChecked) {
                     toastText += "\n Language"
                 }
             }
             val toast = Toast.makeText(applicationContext, toastText, duration)
             toast.show()
             val intent = Intent(this, AddMovie::class.java)
-            intent.putExtra("movieName",movieName)
+            intent.putExtra("movieName", movieName)
             startActivity(intent)
-            }
-
-
-
-
         }
-
-
-
     }
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.addmovie,menu)
+        return super.onCreateOptionsMenu(menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem?): Boolean {
+        return super.onOptionsItemSelected(item)
+    }
+}
 
 

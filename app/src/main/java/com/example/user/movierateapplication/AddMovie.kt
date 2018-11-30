@@ -73,6 +73,10 @@ class AddMovie : AppCompatActivity() {
     }
 
     override fun onOptionsItemSelected(item: MenuItem?): Boolean {
+        if(item?.itemId == R.id.clearAddMovie) {
+            ptMovieName.text.clear()
+            ptDesc.text.clear()
+        }
         return super.onOptionsItemSelected(item)
     }
 }

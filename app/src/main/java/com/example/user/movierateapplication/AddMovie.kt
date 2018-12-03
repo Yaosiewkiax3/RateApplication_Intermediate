@@ -76,6 +76,9 @@ class AddMovie : AppCompatActivity() {
         if(item?.itemId == R.id.clearAddMovie) {
             ptMovieName.text.clear()
             ptDesc.text.clear()
+            radioButtonEng.isChecked = true
+            ptReleaseDate.text.clear()
+            cbAudience.isChecked = false
         }
         return super.onOptionsItemSelected(item)
     }

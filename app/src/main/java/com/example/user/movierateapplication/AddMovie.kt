@@ -83,11 +83,44 @@ class AddMovie : AppCompatActivity() {
             var movieDetails = applicationContext as Movie
             val ptMovieName = findViewById<TextView>(R.id.ptMovieName)
             val movieName: String? = ptMovieName.text.toString()
+            val ptDesc = findViewById<TextView>(R.id.ptDesc)
+            val desc: String? = ptDesc.text.toString()
+            val ptRelease = findViewById<TextView>(R.id.ptReleaseDate)
+            val releaseDate: String? = ptRelease.text.toString()
+            val radioLangGroup = findViewById<RadioGroup>(R.id.rgLang)
+            val idSelected = radioLangGroup.checkedRadioButtonId
+            val radioLangText = findViewById<RadioButton>(idSelected).text
+
+            if (movieName.isNullOrBlank()) {
+                ptMovieName.setError("Field empty")
+            }
+            if (desc.isNullOrBlank()) {
+                ptDesc.setError("Field empty")
+            }
+            if (releaseDate.isNullOrBlank()) {
+                ptRelease.setError("Field empty")
+            }
+            if(!releaseDate.isNullOrBlank() && !movieName.isNullOrBlank() && !desc.isNullOrBlank()){
+                movieDetails.setMovieName(movieName.toString())
+                movieDetails.setMovieDesc(desc.toString())
+                movieDetails.setMovieLang(radioLangText.toString())
+                movieDetails.setMovieDate(releaseDate.toString())
+                if(cbAudience.isChecked){
+                    movieDetails.setMovieSuitable(true)
+                    if(cbLanguage.isChecked){
+                        movieDetails.setMovieStrongLang(true)
+                    }
+                    if(cbViolence.isChecked){
+                        movieDetails.setMovieViolence(true)
+                    }
+                }
+
+            }
             movieDetails.setMovieName(movieName.toString())
 //            val intent = Intent(this, ViewMovie::class.java)
 //            startActivity(intent)
 //            val xd = movieDetails.getName()
-            val toast = Toast.makeText(applicationContext, "asd", Toast.LENGTH_SHORT)
+            val toast = Toast.makeText(applicationContext, movieDetails.getMovieViolence().toString(), Toast.LENGTH_SHORT)
             toast.show()
         }
         return super.onOptionsItemSelected(item)

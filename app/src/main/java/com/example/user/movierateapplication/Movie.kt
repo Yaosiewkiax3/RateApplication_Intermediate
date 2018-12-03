@@ -11,6 +11,8 @@ class Movie : Application(){
     var suitable:Boolean=false
     var violence:Boolean=false
     var strongLang:Boolean=false
+    var ratings:String=""
+    var star:Int=0
 
     fun getMovieName():String{
         return name
@@ -65,7 +67,23 @@ class Movie : Application(){
         return strongLang
     }
 
-    fun setMovieStorngLang(sLang:Boolean){
+    fun setMovieStrongLang(sLang:Boolean){
         this.strongLang = sLang
+    }
+
+    fun getMovieRatings():String{
+        return ratings
+    }
+
+    fun setMovieRatings(mRatings:String){
+        this.ratings = mRatings
+    }
+
+    fun getMovieStar():Int{
+        return star
+    }
+
+    fun setMovieStar(mStar:Int){
+        this.star = mStar
     }
 }

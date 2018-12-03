@@ -91,9 +91,5 @@
                     android:layout_height="wrap_content" android:id="@+id/cbLanguage" android:layout_weight="1"
                     android:text="Language used"/>
         </LinearLayout>
-        <Button
-                android:text="add movie"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" android:id="@+id/button2" android:layout_weight="0.005"/>
     </LinearLayout>
 </LinearLayout>

@@ -57,6 +57,12 @@ class ViewMovie : AppCompatActivity() {
         }
         return super.onContextItemSelected(item)
     }
+
+    override fun onBackPressed() {
+        val intent = Intent(this, LandingPage::class.java)
+        startActivity(intent)
+        super.onBackPressed()
     }
+}
 
 

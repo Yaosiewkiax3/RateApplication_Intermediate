@@ -1,5 +1,6 @@
 package com.example.user.movierateapplication
 
+import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 
@@ -12,7 +13,11 @@ class RateMovie : AppCompatActivity() {
 
         }
 
-
+    override fun onBackPressed() {
+        val intent = Intent(this, ViewMovie::class.java)
+        startActivity(intent)
+        super.onBackPressed()
     }
+}
 
 

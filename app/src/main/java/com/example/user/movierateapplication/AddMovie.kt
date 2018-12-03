@@ -105,8 +105,8 @@ class AddMovie : AppCompatActivity() {
                 movieDetails.setMovieDesc(desc.toString())
                 movieDetails.setMovieLang(radioLangText.toString())
                 movieDetails.setMovieDate(releaseDate.toString())
-                if(cbAudience.isChecked){
-                    movieDetails.setMovieSuitable(true)
+                if(!cbAudience.isChecked){
+                    movieDetails.setMovieSuitable(false)
                     if(cbLanguage.isChecked){
                         movieDetails.setMovieStrongLang(true)
                     }
@@ -114,14 +114,9 @@ class AddMovie : AppCompatActivity() {
                         movieDetails.setMovieViolence(true)
                     }
                 }
-
+                val intent = Intent(this, ViewMovie::class.java)
+                startActivity(intent)
             }
-            movieDetails.setMovieName(movieName.toString())
-//            val intent = Intent(this, ViewMovie::class.java)
-//            startActivity(intent)
-//            val xd = movieDetails.getName()
-            val toast = Toast.makeText(applicationContext, movieDetails.getMovieViolence().toString(), Toast.LENGTH_SHORT)
-            toast.show()
         }
         return super.onOptionsItemSelected(item)
     }

@@ -7,42 +7,42 @@ import android.view.ContextMenu
 import android.view.MenuItem
 import android.view.View
 import kotlinx.android.synthetic.main.activity_view_movie.*
-
+import com.example.user.movierateapplication.Movie
 class ViewMovie : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_view_movie)
 
-        val movieDetails = Movie("VenomSSS","When Eddie Brock acquires the powers of a symbiote, he will have to release his alter-ego \"Venom\" to save his life","English","03-10-2018",true, null,null)
-
-        tvTitle.text = movieDetails.name
-        tvDesc.text = movieDetails.desc
-        tvLanguage.text = movieDetails.lang
-        tvDate.text = movieDetails.date
-        tvSuitable.text = movieDetails.suitable.toString()
+//        val movieDetails = Movie("VenomSSS","When Eddie Brock acquires the powers of a symbiote, he will have to release his alter-ego \"Venom\" to save his life","English","03-10-2018",true, null,null)
+        var movieDetails = applicationContext as Movie
+        tvTitle.text = movieDetails.getMovieName()
+        tvDesc.text = movieDetails.getMovieDesc()
+        tvLanguage.text = movieDetails.getMovieLang()
+        tvDate.text = movieDetails.getMovieDate()
+        if(movieDetails.getMovieSuitable()){
+            tvSuitable.text = "Yes"
+        }
+        else{
+            if(movieDetails.getMovieViolence()){
+                tvSuitable.text = "No(Violence)"
+            }
+            else if(movieDetails.getMovieStrongLang()){
+                tvSuitable.text = "No(language)"
+            }
+            else if(movieDetails.getMovieStrongLang() && movieDetails.getMovieViolence()){
+                tvSuitable.text = "No(Violence and language)"
+            }
+            else{
+                tvSuitable.text = "No"
+            }
+        }
+//        tvSuitable.text = movieDetails.getMovieSuitable().toString()
 
         registerForContextMenu(tvAddReview)
         }
 
-    class Movie(name:String,desc:String,lang:String,date:String,suitable:Boolean, violence:Boolean?,language:Boolean?){
-        val name:String
-        val desc:String
-        val lang:String
-        val date:String
-        val suitable:Boolean
-        val violence: Boolean?
-        val language: Boolean?
-        init {
-            this.name = name
-            this.desc = desc
-            this.lang = lang
-            this.date = date
-            this.suitable = suitable
-            this.violence = violence
-            this.language = language
-        }
-    }
+
     override fun onCreateContextMenu(menu: ContextMenu?, v: View?, menuInfo: ContextMenu.ContextMenuInfo?) {
         super.onCreateContextMenu(menu, v, menuInfo)
         if(v?.id == R.id.tvAddReview){

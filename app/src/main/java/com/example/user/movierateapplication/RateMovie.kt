@@ -3,6 +3,12 @@ package com.example.user.movierateapplication
 import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuItem
+import android.widget.EditText
+import android.widget.TextView
+import android.widget.Toast
+import kotlinx.android.synthetic.main.activity_rate_movie.*
 
 class RateMovie : AppCompatActivity() {
 
@@ -17,6 +23,28 @@ class RateMovie : AppCompatActivity() {
         val intent = Intent(this, ViewMovie::class.java)
         startActivity(intent)
         super.onBackPressed()
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.ratemovie,menu)
+        return super.onCreateOptionsMenu(menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem?): Boolean {
+        if(item?.itemId == R.id.rateMenu){
+            var movieDetails = applicationContext as Movie
+            val ptMovieRate = findViewById<EditText>(R.id.ratingComments)
+            val movieRate: String? = ptMovieRate.text.toString()
+            if(movieRate.isNullOrEmpty()){
+                ptMovieRate.setError("Please enter a rating")
+            }
+            else{
+            movieDetails.setMovieStar(ratingStarBar.rating)
+            movieDetails.setMovieRatings(ratingComments.toString())
+            Toast.makeText(applicationContext, movieRate, Toast.LENGTH_SHORT).show()}
+        }
+
+        return super.onOptionsItemSelected(item)
     }
 }
 

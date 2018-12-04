@@ -12,7 +12,7 @@ class Movie : Application(){
     var violence:Boolean=false
     var strongLang:Boolean=false
     var ratings:String?=null
-    var star:Int=0
+    var star:Float= 0f
 
     fun getMovieName():String{
         return name
@@ -79,11 +79,11 @@ class Movie : Application(){
         this.ratings = mRatings
     }
 
-    fun getMovieStar():Int{
+    fun getMovieStar():Float{
         return star
     }
 
-    fun setMovieStar(mStar:Int){
+    fun setMovieStar(mStar:Float){
         this.star = mStar
     }
 }

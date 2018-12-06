@@ -15,8 +15,8 @@ class RateMovie : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_rate_movie)
-
-
+            var movieDetails = applicationContext as Movie
+            textView5.setText("Enter your review for the movie: " +movieDetails.getMovieName())
         }
 
     override fun onBackPressed() {
@@ -38,10 +38,12 @@ class RateMovie : AppCompatActivity() {
             if(movieRate.isNullOrEmpty()){
                 ptMovieRate.setError("Please enter a rating")
             }
-            else{
-            movieDetails.setMovieStar(ratingStarBar.rating)
-            movieDetails.setMovieRatings(ratingComments.toString())
-            Toast.makeText(applicationContext, movieRate, Toast.LENGTH_SHORT).show()}
+            else {
+                movieDetails.setMovieStar(ratingStarBar.rating)
+                movieDetails.setMovieRatings(ratingComments.text.toString())
+                val intent = Intent(this, ViewMovie::class.java)
+                startActivity(intent)
+            }
         }
 
         return super.onOptionsItemSelected(item)

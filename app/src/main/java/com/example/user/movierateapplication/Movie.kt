@@ -12,7 +12,7 @@ class Movie : Application(){
     var violence:Boolean=false
     var strongLang:Boolean=false
     var ratings:String?=null
-    var star:Float= 0f
+    var star:Float= 0.0f
 
     fun getMovieName():String{
         return name

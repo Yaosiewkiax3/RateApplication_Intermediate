@@ -11,26 +11,26 @@
             android:supportsRtl="true"
             android:exported="true"
             android:theme="@style/AppTheme">
-        <activity android:name=".AddMovie">
+        <activity android:name=".LandingPage">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:name=".AddMovie" android:parentActivityName=".LandingPage">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name=".ViewMovie">
+        <activity android:name=".ViewMovie" android:parentActivityName=".LandingPage">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name=".RateMovie">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
-                <category android:name="android.intent.category.LAUNCHER"/>
-            </intent-filter>
-        </activity>
-        <activity android:name=".LandingPage">
+        <activity android:name=".RateMovie" android:parentActivityName=".ViewMovie">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER"/>

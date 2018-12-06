@@ -6,6 +6,8 @@ import android.os.Bundle
 import android.view.ContextMenu
 import android.view.MenuItem
 import android.view.View
+import android.view.View.GONE
+import android.view.View.VISIBLE
 import kotlinx.android.synthetic.main.activity_view_movie.*
 import com.example.user.movierateapplication.Movie
 class ViewMovie : AppCompatActivity() {
@@ -20,6 +22,13 @@ class ViewMovie : AppCompatActivity() {
         tvDesc.text = movieDetails.getMovieDesc()
         tvLanguage.text = movieDetails.getMovieLang()
         tvDate.text = movieDetails.getMovieDate()
+        if(!movieDetails.getMovieRatings().isNullOrBlank()){
+            tvAddReview.text = movieDetails.getMovieRatings()
+            ratingBar.rating = movieDetails.getMovieStar()
+            ratingBar.visibility = VISIBLE
+            tvNoReviews.visibility = GONE
+            ratingBar.setIsIndicator(true)
+        }
         if(movieDetails.getMovieSuitable()){
             tvSuitable.text = "Yes"
         }

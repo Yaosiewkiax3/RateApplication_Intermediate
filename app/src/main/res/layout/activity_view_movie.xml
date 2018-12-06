@@ -26,10 +26,18 @@
             android:text="Reviews:"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" android:id="@+id/textView6"/>
+    <RatingBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:id="@+id/ratingBar" android:numStars="5"
+            android:visibility="gone" android:clickable="false"/>
     <TextView
-            android:text="No Reviews yet \nLong press here to add your review"
+            android:text="No Reviews yet"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" android:id="@+id/tvAddReview" android:textSize="22sp"/>
+            android:layout_height="wrap_content" android:id="@+id/tvNoReviews" android:textSize="22sp"/>
+    <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:id="@+id/tvAddReview" android:textSize="22sp"
+            android:text="Long hold to add a review"/>
     <TextView
             android:text="Language:"
             android:layout_width="match_parent"

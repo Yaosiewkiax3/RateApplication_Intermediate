@@ -105,7 +105,7 @@ class AddMovie : AppCompatActivity() {
                 movieDetails.setMovieDesc(desc.toString())
                 movieDetails.setMovieLang(radioLangText.toString())
                 movieDetails.setMovieDate(releaseDate.toString())
-                if(!cbAudience.isChecked){
+                if(cbAudience.isChecked){
                     movieDetails.setMovieSuitable(false)
                     if(cbLanguage.isChecked){
                         movieDetails.setMovieStrongLang(true)

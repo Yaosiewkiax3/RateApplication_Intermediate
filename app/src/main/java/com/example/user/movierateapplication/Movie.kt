@@ -8,7 +8,7 @@ class Movie : Application(){
     var desc:String=""
     var lang:String=""
     var date:String=""
-    var suitable:Boolean=false
+    var suitable:Boolean=true
     var violence:Boolean=false
     var strongLang:Boolean=false
     var ratings:String?=null
